@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ParenthesisController extends Controller
 {
@@ -12,6 +13,7 @@ class ParenthesisController extends Controller
         try {
             return response()->json($this->isValid($data));
         } catch (Exception $e) {
+            Log::error($e);
             return response()->json($e->getMessage());
         }
     }
