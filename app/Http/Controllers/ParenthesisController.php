@@ -19,7 +19,7 @@ class ParenthesisController extends Controller
     /**
      * @throws Exception
      */
-    private function isValid(string $data)
+    private function isValid(string $data): bool
     {
         $allChars = str_split('(){}[]');
         $charEquivalent = [
